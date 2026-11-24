@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sericulture Hub | Silk Farming & Production</title>
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --surface: #ffffff;
+      --primary: #2d5a27;
+      --primary-light: #e8f0e6;
+      --accent: #b45309;
+      --text: #1f2937;
+      --muted: #4b5563;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    nav a {
+      margin-left: 1.25rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 2.5rem auto;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, var(--primary-light), #fff7ed);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .hero h1 {
+      font-size: 2.25rem;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero p {
+      max-width: 680px;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--primary);
+      color: #fff;
+      padding: 0.7rem 1.35rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #23471e;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    section h2 {
+      font-size: 1.65rem;
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-size: 1.15rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .filter-btn {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .filter-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .inquiry-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      max-width: 600px;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-weight: 500;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.6rem 0.75rem;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    .status-msg {
+      margin-top: 0.75rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">Sericulture Hub</a>
+      <nav>
+        <a href="#lifecycle">Lifecycle</a>
+        <a href="#varieties">Silk Varieties</a>
+        <a href="#practices">Farming</a>
+        <a href="#contact">Connect</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Cultivating Mulberry, Silkworms &amp; Sustainable Silk</h1>
+      <p>
+        An educational and farm-management starter site covering host-plant cultivation,
+        silkworm rearing, cocoon reeling, and natural silk varieties.
+      </p>
+      <a href="#lifecycle" class="btn">Explore the Lifecycle</a>
+    </section>
+
+    <section id="lifecycle">
+      <h2>Silkworm Lifecycle Stages</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>1. Egg (Ovum)</h3>
+          <p>Female moths lay hundreds of eggs. Controlled temperature and humidity help eggs hatch uniformly into larvae.</p>
+        </div>
+        <div class="card">
+          <h3>2. Larva (Silkworm)</h3>
+          <p>The feeding stage where larvae consume fresh mulberry leaves and molt four times as they grow rapidly.</p>
+        </div>
+        <div class="card">
+          <h3>3. Pupa (Cocoon)</h3>
+          <p>Mature larvae spin a continuous silk filament around themselves to form a protective cocoon over several days.</p>
+        </div>
+        <div class="card">
+          <h3>4. Adult Moth</h3>
+          <p>Moths emerge from unreeled breeding cocoons to mate and repeat the cycle, completing the life history.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="varieties">
+      <h2>Silk Varieties</h2>
+      <div class="filter-bar" role="group" aria-label="Filter silk varieties">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="mulberry">Mulberry</button>
+        <button class="filter-btn" data-filter="vanya">Vanya / Wild</button>
+      </div>
+      <div class="grid" id="varieties-grid">
+        <div class="card" data-type="mulberry">
+          <h3>Mulberry Silk</h3>
+          <p>Produced by domesticated <em>Bombyx mori</em> fed on mulberry leaves; fine, uniform, and lustrous.</p>
+        </div>
+        <div class="card" data-type="vanya">
+          <h3>Tussar Silk</h3>
+          <p>Harvested from wild silkworms feeding on forest trees like Arjun and Asan; known for rich texture and warmth.</p>
+        </div>
+        <div class="card" data-type="vanya">
+          <h3>Eri Silk</h3>
+          <p>Spun from open-ended cocoons without harming the pupa; often called peace silk with a soft, cotton-like feel.</p>
+        </div>
+        <div class="card" data-type="vanya">
+          <h3>Muga Silk</h3>
+          <p>Naturally golden-hued silk produced by <em>Antheraea assamensis</em> on Som and Soalu host plants.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="practices">
+      <h2>Core Sericulture Practices</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Host Plant Agronomy</h3>
+          <p>Maintain soil fertility, drip irrigation, and timely pruning so tender, nutrient-rich leaves are ready for rearing.</p>
+        </div>
+        <div class="card">
+          <h3>Rearing Hygiene &amp; Climate</h3>
+          <p>Disinfect rearing trays and rooms, monitor temperature and airflow, and prevent disease outbreaks like pebrine or grasserie.</p>
+        </div>
+        <div class="card">
+          <h3>Cocoon Sorting &amp; Reeling</h3>
+          <p>Grade cocoons by quality and shell weight before stifling and reeling continuous filaments into raw silk yarn.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Farmer &amp; Buyer Inquiry</h2>
+      <div class="inquiry-box">
+        <form id="inquiry-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" type="text" required placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label for="role">I am a</label>
+            <select id="role">
+              <option value="Mulberry Farmer">Mulberry / Silkworm Farmer</option>
+              <option value="Reeler / Weaver">Reeler or Weaver</option>
+              <option value="Buyer / Researcher">Silk Buyer or Researcher</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Topic or Requirement</label>
+            <textarea id="message" rows="3" required placeholder="Rearing guidance, cocoon supply, training, etc."></textarea>
+          </div>
+          <button type="submit" class="btn">Submit Inquiry</button>
+          <p class="status-msg" id="status-msg" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Sericulture Hub Starter Template — Customize sections, data, and backend endpoints as your project grows.</p>
+  </footer>
+
+  <script>
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll("#varieties-grid .card");
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        filterButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.dataset.filter;
+        cards.forEach((card) => {
+          const matches = filter === "all" || card.dataset.type === filter;
+          card.style.display = matches ? "block" : "none";
+        });
+      });
+    });
+
+    const form = document.getElementById("inquiry-form");
+    const statusMsg = document.getElementById("status-msg");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const role = document.getElementById("role").value;
+      statusMsg.textContent = `Recorded inquiry for ${name} (${role}). Connect a backend API or form service to store submissions.`;
+      form.reset();
+    });
+  </script>
+</body>
+</html>
